@@ -1,5 +1,4 @@
-export default function Text(props) {
-  console.log("Text", props);
-
+export default function Node(props) {
+  // console.log("Node", props);
   return <div dangerouslySetInnerHTML={{ __html: props.data.html }} />;
 }

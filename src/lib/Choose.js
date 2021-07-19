@@ -2,12 +2,10 @@ import React, { Fragment } from "react";
 
 const Components = {};
 
-// Layout
-Components["container"] = require("./Components/Container").default;
-Components["columns"] = require("./Components/TwoColumn").default;
-
-// Field Types
-Components["text"] = require("./Components/Text").default;
+Components["root"] = require("./Components/Root").default;
+Components["row"] = require("./Components/Row").default;
+Components["column"] = require("./Components/Column").default;
+Components["node"] = require("./Components/Node").default;
 
 /**
  * Recursive component
@@ -26,13 +24,20 @@ export default function Choose(props) {
           return <Fragment>MISSING COMPONENT {props.children}</Fragment>;
         };
 
-        // width indicates layout
-        if (child.width) {
-          Component = Components["container"];
+        if (child.type) {
+          Component = Components["node"];
         }
 
-        if (child.type && Components[child.type]) {
-          Component = Components[child.type];
+        if (child.classes === "column") {
+          Component = Components["column"];
+        }
+
+        if (child.classes === "row") {
+          Component = Components["row"];
+        }
+
+        if (child.name === "layout:root:column:0") {
+          Component = Components["root"];
         }
 
         return (

@@ -20,6 +20,7 @@ function walk(node) {
 
 export function AutoLayout(props) {
   const [pvl, setPvl] = useState({});
+  const [error, setError] = useState("");
 
   useEffect(() => {
     fetch(
@@ -31,14 +32,22 @@ export function AutoLayout(props) {
         const root = json["layout:root:column:0"];
         walk(root);
         setPvl(root);
+      })
+      .catch((err) => {
+        setError(err.toString());
+        throw err;
       });
   }, [props.instanceZUID, props.modelZUID]);
 
-  console.log("PVL", pvl);
-
   return (
     <div id="pvl">
-      {pvl?.children ? <Choose layout={pvl.children} /> : "loading"}
+      {pvl?.children ? (
+        <Choose layout={pvl.children} />
+      ) : error ? (
+        error
+      ) : (
+        "loading"
+      )}
     </div>
   );
 }
