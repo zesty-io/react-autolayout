@@ -4,7 +4,7 @@
   "description": "React component for consuming Zesty.io AutoLayout structures",
   "author": "Zesty.io <developers@zesty.io>",
   "license": "ISC",
-  "main": "lib/",
+  "main": "lib/AutoLayout.js",
   "directories": {
     "lib": "lib"
   },
