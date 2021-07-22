@@ -1,6 +1,6 @@
 import "./App.css";
 
-import { AutoLayout } from "./lib/AutoLayout";
+import { AutoLayout } from "@zesty-io/react-autolayout";
 
 function App() {
   return (
