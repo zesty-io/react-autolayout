@@ -1,6 +1,6 @@
 {
   "name": "@zesty-io/react-autolayout",
-  "version": "1.0.0-alpha.6",
+  "version": "1.0.0-alpha.7",
   "description": "React component for consuming Zesty.io AutoLayout structures",
   "author": "Zesty.io <developers@zesty.io>",
   "license": "ISC",
