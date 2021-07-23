@@ -1,14 +1,16 @@
 {
   "name": "@zesty-io/react-autolayout",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.7",
   "description": "React component for consuming Zesty.io AutoLayout structures",
   "author": "Zesty.io <developers@zesty.io>",
   "license": "ISC",
-  "main": "lib/AutoLayout.js",
+  "main": "dist/AutoLayout.js",
   "directories": {
-    "lib": "lib"
+    "dist": "dist"
   },
   "scripts": {
+    "build": "npx rollup -c",
+    "release": "npm run build && npm publish",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,7 +21,19 @@
     "url": "https://github.com/zesty-io/react-autolayout/issues"
   },
   "homepage": "https://github.com/zesty-io/react-autolayout#readme",
-  "peerDependencies": {
-    "react": "^17.0.2"
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/plugin-proposal-decorators": "^7.14.5",
+    "@babel/plugin-proposal-export-namespace-from": "^7.14.5",
+    "@babel/plugin-proposal-function-sent": "^7.14.5",
+    "@babel/plugin-proposal-numeric-separator": "^7.14.5",
+    "@babel/plugin-proposal-throw-expressions": "^7.14.5",
+    "@babel/plugin-transform-runtime": "^7.14.5",
+    "@babel/preset-env": "^7.14.8",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/runtime": "^7.14.8",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^19.0.1",
+    "rollup": "^2.53.3"
   }
 }

@@ -1,6 +1,7 @@
 webpack.*.js
 .eslintrc
 .gitignore
-
+ 
+lib/
 demo/
 node_modules/
