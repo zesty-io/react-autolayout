@@ -1,5 +1,5 @@
-import cjs from "rollup-plugin-commonjs";
-import babel from "rollup-plugin-babel";
+import cjs from "@rollup/plugin-commonjs";
+import babel from "@rollup/plugin-babel";
 // import { terser } from "rollup-plugin-terser";
 
 import pkg from './package.json'
@@ -18,38 +18,17 @@ export default {
     plugins: [
         babel({
             exclude: "node_modules/**", // only transpile our source code
-            runtimeHelpers: true
-            // plugins: ["transform-runtime"]
+            babelHelpers: 'runtime',
         }),
         cjs({
-            include: "node_modules/**",
-            namedExports: {
-                "node_modules/react/index.js": [
-                    "Component",
-                    "PureComponent",
-                    "Fragment",
-                    "Children",
-                    "createElement"
-                ]
-            }
+            // include: "node_modules/**",
         }),
         // terser()
     ],
     external: [
         "react",
         "react-dom",
-        "@babel/runtime/helpers/extends",
-        "@babel/runtime/helpers/classCallCheck",
-        "@babel/runtime/helpers/createClass",
-        "@babel/runtime/helpers/possibleConstructorReturn",
-        "@babel/runtime/helpers/inherits",
-        "@babel/runtime/helpers/toConsumableArray",
-        "@babel/runtime/helpers/getPrototypeOf",
-        "@babel/runtime/helpers/assertThisInitialized",
-        "@babel/runtime/helpers/assertThisInitialized",
-        "@babel/runtime/helpers/slicedToArray",
-        "@babel/runtime/helpers/defineProperty",
-        "babel-runtime/core-js/object/keys",
+        /@babel\/runtime/, // exclude all runtimes
         "classnames"
     ]
 }
