@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <AutoLayout instanceZUID="parsleydev-dev" modelZUID="6-ddf428-gd0xxn" />
+        <AutoLayout url={'https://4q6k83l9-dev.webengine.zesty.io/zop-gun/?toJSON'} />
       </header>
     </div>
   );
