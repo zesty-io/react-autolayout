@@ -1,78 +1,79 @@
-# react-autolayout
+# Zesty.io AutoLayout in React
 
-> React components to consume AutoLayout JSON data
+> React components to consume the marketers controlled Zesty.io Drag n Drop Content Deisgner JSON which rendered automatics layouts.
 
-## AutoLayout
+The AutoLayout feature allows for content authors to use the Drag n Drop ContentDesigner tool to craft a layout structure which is made available with JSON endpoints which are consumed by this library. Once Content Designer JSON enpoints are consumed, all published changes to content or layout in the ManagerUI will automatically be reflected on the front-end.
 
-The AutoLayout feature allows for using the ContentDesigner to craft a layout structure which is made available with JSON endpoints. Which then is consumed by this library. Once consumed any additional changes to content with the ManagerUI or the layout with the ContentDesigner will automatically be reflected on the front-end.
+## Getting Started
+
+In your React NextJS app, install autolayout with an npm call
+
+```npm i @zesty-io/autolayout```
+
+In the component you want to run auto layout 
+
+```
+import { AutoLayout } from "@zesty-io/react-autolayout";
+
+export default function Page({ page }) {
+  let zestyToJSONReference= `https://4q6k83l9-dev.webengine.zesty.io/zop-gun/?toJSON`
+  return (
+    <div className="container">
+      <AutoLayout url={zestyToJSONReference} />
+    </div>
+  );
+}
+```
+
+## Using  custom components 
+
+Custom components can be written to override the defaults pages components for content types like Textarea, Column, Text etc.. An example of that code is:
+
+```
+import React from "react";
+
+import { AutoLayout } from "@zesty-io/react-autolayout";
+import { CustomTextarea } from "./CustomTextarea";
+import { CustomColumn } from "./CustomColumn";
+
+export default function Page({ page }) {
+  let zestyJSONReference = `https://4q6k83l9-dev.webengine.zesty.io/zop-gun/?toJSON`
+  return (
+    <div className="container">
+      <AutoLayout url={zestyJSONReference} components={{
+      "textarea": CustomTextarea,
+      "column": CustomColumn
+    }} />
+    </div>
+  );
+}
+```
+
+The `CustomTextarea` custome component is written like: 
+
+```
+import React from 'react';
+export function CustomTextarea(props) {
+    return <div  style={{
+        margin: "16px"
+    }}>
+        <h1>Custom  Textarea Component</h1>
+        <p style={{
+            fontWeight: "bold",
+            fontSize: "24px",
+            color: "red"
+        }} dangerouslySetInnerHTML={{ __html: props.data.html }} />
+    </div>;
+}
+```
+
+Explore NextJS example reference: `https://github.com/zesty-io/demos/blob/main/nextjs/pages/autolayout`
+
+
+## Example Images
 
 ![autolayout-manager-ui](https://user-images.githubusercontent.com/208819/126240959-eb8add91-ed8e-4f37-88b3-a51ba7ca34ca.png)
 ![autolayout-content-designer](https://user-images.githubusercontent.com/208819/126240964-d6db1670-da1e-446f-b4b5-26afe9553471.png)
 ![autolayout-webpage](https://user-images.githubusercontent.com/208819/126241108-a10926f1-0b73-4962-81df-b8e45f8b4ff3.png)
 
-Conceptual AutoLayout JSON structure. This structure describes both the layout heiarchy and the content of the leaf nodes.
 
-```json
-{
-  "type": "root",
-  "children": [
-    {
-      "type": "row",
-      "children": [
-        {
-          "type": "column",
-          "children": [
-            {
-              "type": "field",
-              "name": "image",
-              "data": {
-                "value": "3-000",
-                "resolvedValue": "http://...image",
-                "html": "<img src=''>"
-              },
-              "meta": {
-                "ZUID": "12-38dab4-4qvghx",
-                "contentModelZUID": "6-ddf428-gd0xxn",
-                "createdAt": "2016-11-17T07:38:45Z",
-                "description": null,
-                "fieldOptions": "",
-                "label": "Title (text)",
-                "name": "title",
-                "options": "",
-                "relatedFieldZUID": null,
-                "relatedModelZUID": null,
-                "relationship": "",
-                "required": false,
-                "settings": { "options": {} },
-                "sort": 0,
-                "updatedAt": "2016-11-17T07:38:45Z"
-              }
-            },
-            {
-              "type": "model",
-              "name": "example_data",
-              "children": [
-                {
-                  "type": "row",
-                  "children": [
-                    {
-                      "type": "column",
-                      "children": [
-                        {
-                          "type": "field",
-                          "name": "date",
-                          "data": {}
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
-```
