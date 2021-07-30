@@ -8,7 +8,7 @@ The AutoLayout feature allows for content authors to use the Drag n Drop Content
 
 In your React NextJS app, install autolayout with an npm call
 
-```npm i @zesty-io/autolayout```
+```npm i @zesty-io/react-autolayout```
 
 In the component you want to run auto layout 
 
