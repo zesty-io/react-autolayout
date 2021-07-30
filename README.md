@@ -67,7 +67,7 @@ export function CustomTextarea(props) {
 }
 ```
 
-Explore NextJS example reference: `https://github.com/zesty-io/demos/blob/main/nextjs/pages/autolayout`
+Explore NextJS example reference: https://github.com/zesty-io/demos/blob/main/nextjs/pages/autolayout
 
 
 ## Example Images
