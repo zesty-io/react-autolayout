@@ -4,15 +4,36 @@
 
 The AutoLayout feature allows for content authors to use the Drag n Drop ContentDesigner tool to craft a layout structure which is made available with JSON endpoints which are consumed by this library. Once Content Designer JSON enpoints are consumed, all published changes to content or layout in the ManagerUI will automatically be reflected on the front-end.
 
-## Getting Started
+# Getting Started
 
 In your React NextJS app, install autolayout with an npm call
 
 ```npm i @zesty-io/react-autolayout```
 
-In the component you want to run auto layout 
+There are two implmentation of auto layout, (1) works with Next.js (2) works independently. 
 
+## 1. Next.js implementation
+
+The expects the `{content}` object fed from the nextjs zesty integration to be passed to the AutoLayout object.
+
+```javascript
+import React from 'react'
+import { AutoLayout } from "@zesty-io/react-autolayout";
+
+export default function Page({ content }) {
+  return (
+    <div className="container">
+      <AutoLayout content={content} />
+    </div>
+  );
+}
 ```
+
+## Independent Implementation
+
+In the component you want to run auto layout, using the URL
+
+```javascript
 import { AutoLayout } from "@zesty-io/react-autolayout";
 
 export default function Page({ page }) {
