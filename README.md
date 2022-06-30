@@ -1,4 +1,4 @@
-# Zesty.io AutoLayout in React
+# Zesty.io Auto Page Layout in React
 
 > React components to consume the marketers controlled Zesty.io Drag n Drop Content Deisgner JSON which rendered automatics layouts.
 
@@ -50,7 +50,7 @@ export default function Page({ page }) {
 
 Custom components can be written to override the defaults pages components for content types like Textarea, Column, Text etc.. An example of that code is:
 
-```
+```javascript
 import React from "react";
 
 import { AutoLayout } from "@zesty-io/react-autolayout";
@@ -72,7 +72,7 @@ export default function Page({ page }) {
 
 The `CustomTextarea` custome component is written like: 
 
-```
+```javascript
 import React from 'react';
 export function CustomTextarea(props) {
     return <div  style={{
