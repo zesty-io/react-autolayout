@@ -1,6 +1,6 @@
 {
     "name": "@zesty-io/react-autolayout",
-    "version": "1.0.0-beta.10",
+    "version": "1.0.0-beta.11",
     "description": "React component for consuming Zesty.io AutoLayout structures",
     "author": "Zesty.io <developers@zesty.io>",
     "license": "ISC",
@@ -11,7 +11,7 @@
     "scripts": {
         "build": "npx rollup -c",
         "release": "npm run build && npm publish",
-        "beta-release" : "npm version prerelease --preid=beta",
+        "beta-release": "npm version prerelease --preid=beta",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
