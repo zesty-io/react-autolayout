@@ -93,6 +93,9 @@ Explore NextJS example reference: https://github.com/zesty-io/demos/blob/main/ne
 
 ## Example Demo
 
+![image](https://github.com/zesty-io/react-autolayout/assets/44116036/90a0bb96-7902-49e0-a269-a16598f6ee23)
+![image](https://github.com/zesty-io/react-autolayout/assets/44116036/3bf775c8-f059-44cf-b935-8a3ba5b0ec47)
+
 [screencast-8-c8e4be8cbc-10sbs4.manager.zesty.io-2023.11.30-16_06_22.webm](https://github.com/zesty-io/react-autolayout/assets/44116036/2cebe22a-e71d-4326-bcea-a3d0d03bd1ad)
 
 
