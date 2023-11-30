@@ -91,10 +91,11 @@ export function CustomTextarea(props) {
 Explore NextJS example reference: https://github.com/zesty-io/demos/blob/main/nextjs/pages/autolayout
 
 
-## Example Images
+## Example Demo
 
-![autolayout-manager-ui](https://user-images.githubusercontent.com/208819/126240959-eb8add91-ed8e-4f37-88b3-a51ba7ca34ca.png)
-![autolayout-content-designer](https://user-images.githubusercontent.com/208819/126240964-d6db1670-da1e-446f-b4b5-26afe9553471.png)
-![autolayout-webpage](https://user-images.githubusercontent.com/208819/126241108-a10926f1-0b73-4962-81df-b8e45f8b4ff3.png)
+![image](https://github.com/zesty-io/react-autolayout/assets/44116036/90a0bb96-7902-49e0-a269-a16598f6ee23)
+![image](https://github.com/zesty-io/react-autolayout/assets/44116036/3bf775c8-f059-44cf-b935-8a3ba5b0ec47)
+
+[screencast-8-c8e4be8cbc-10sbs4.manager.zesty.io-2023.11.30-16_06_22.webm](https://github.com/zesty-io/react-autolayout/assets/44116036/2cebe22a-e71d-4326-bcea-a3d0d03bd1ad)
 
 
